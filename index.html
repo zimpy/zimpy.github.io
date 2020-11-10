@@ -18,11 +18,11 @@
         snap.loginkit.mountButton(loginButtonIconId, {
           clientId: clientId,
           redirectURI: redirectUrl,
-          /*scopeList: [
+          scopeList: [
             "user.display_name",
-            "user.bitmoji.avatar",
-            "user.external_id",
-          ],*/
+            /*"user.bitmoji.avatar",
+            "user.external_id",*/
+          ],
           handleResponseCallback: function () {
             snap.loginkit.fetchUserInfo().then(
               function (result) {
