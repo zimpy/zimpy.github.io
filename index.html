@@ -6,21 +6,23 @@
     <hr />
     <div id="my-login-button-target"></div>
     <script>
-	var redirectUrl = location.href + 'test';
-	redirectUrl = "https://zimpy.github.io/";
-	console.log('redirectUrl', redirectUrl);
+		var clientId = "59c024eb-4726-479b-b48c-f279af6d1776"; // 8d374d33-b68b-4677-927a-fd1bf713236e
+		var redirectUrl = location.href + 'test';
+		redirectUrl = "https://zimpy.github.io/";
+		console.log('redirectUrl', redirectUrl);
+		console.log('clientId', clientId);
 	
       window.snapKitInit = function () {
         var loginButtonIconId = "my-login-button-target";
         // Mount Login Button
         snap.loginkit.mountButton(loginButtonIconId, {
-          clientId: "8d374d33-b68b-4677-927a-fd1bf713236e",
+          clientId: clientId,
           redirectURI: redirectUrl,
-          scopeList: [
+          /*scopeList: [
             "user.display_name",
             "user.bitmoji.avatar",
             "user.external_id",
-          ],
+          ],*/
           handleResponseCallback: function () {
             snap.loginkit.fetchUserInfo().then(
               function (result) {
